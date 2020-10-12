@@ -1,0 +1,196 @@
+body{
+    background-image:url(../images/background.jpg);
+    background-attachment: fixed;
+    background-size:cover;
+}
+.sign-up{
+    width:76%;
+    height:90%;
+    margin-left: 12%;
+    background-color: white;
+}
+.leftsignup{
+    width:60%;
+    float: left;
+    height: 510px;
+    background-color: #3B3934;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.rightsignup{
+    width:40%;
+    float: right;
+    height: 510px;
+    background-image: url(../images/recy.jpg);
+}
+form{padding-top: 2%;}
+p{
+    color: white;
+    padding-left:15%;
+    padding-right:15%;
+    font-size:1.5vw;
+}
+h3{
+    color:white; 
+    font-size:2.5vw;
+    font-weight: 1000;
+    padding-left:35%;
+}
+h4{
+    color:#3B3934;
+    padding-left: 0px;
+    margin-bottom:1%;
+    font-size:2.0vw;
+}
+#colored{color: #004A7E;}
+input{
+    margin-left:15%;
+    width:59%;
+    border: none;
+}
+select{
+    margin-left:15%;
+    width:69%;
+    border: none;
+}
+.rounded {
+	border: 0px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 25px;
+	-moz-box-shadow: 0px ;
+	-webkit-box-shadow: 0px ;
+	box-shadow: none;
+	font-size: 15px;
+	padding: 2% 5%;
+	outline: 0;
+	-webkit-appearance: none;
+}
+#filled{background-color: #004A7E;}
+input[type=submit]{
+    width:15%;
+    margin-left:40%;
+    margin-top:4%;
+    margin-bottom: 2%;
+    color: #022C63;
+    font-size: 1vw;
+}
+input[type=checkbox]{
+    width:90px;
+    margin-left:15%;
+    margin-top:4%;
+}
+label{color: white;}
+.log-in{
+    width:50%;
+    height:90%;
+    margin-left: 25%;
+    background-color: #3B3934;
+}
+#btn, input[type=submit]{
+    width:19%;
+    margin-left:40%;
+    margin-top:4%;
+    margin-bottom: 2%;
+    color: #3B3934;
+    font-size: 1vw;
+}
+#space{margin-top:5%;height:7px;}
+.big-container{
+    width: 80%;
+    height:auto;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top: 2%;
+    background-color: white;
+    border-radius: 25px;
+}
+.top{width:100%; height:auto;}
+.top-left{width:50%; height:20%; float:left;}
+.top-right{width:50%; height:20%; float:right;}
+.right{float:right; margin-right: 15px; width:50%;}
+.left{float:left; width:40%;}
+#name{padding-left:15%;padding-top: 2%;background-color: inherit;}
+#icon{width: 40%; height:70%; margin-left:50%;margin-top:7%; float:left;}
+.containers{
+    width:80%;
+    height:100%;
+    background-color:  rgb(255, 255, 255, 0.2);
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 0px;
+}
+.stats-container{
+    width:45%;
+    height: 500px;
+    background-color:#3B3934;
+    float:left;
+}
+.account-container{
+    width: 45%;
+    height:500px;
+    background-color: #3B3934;
+    float:right;
+}
+#stats-icon{width: 40%; height:30%; margin-left:28%;margin-top:10%;}
+#account-icon{width: 40%; height:30%; margin-left:28%;margin-top:10%;}
+.containers h3{color:white; font-size:2.5vw;font-weight: 1000;padding-left:30%;}
+button{margin-left: 15%; background-color: white; color: #3B3934;}
+.profile-container{
+    width:80%;
+    height:80%;
+    overflow: auto;
+    margin-left:10%;
+    margin-top:7%;
+    background-color: #3B3934;
+    border: 2px solid #DDDDDD;
+    border-radius: 5px; 
+}
+.profile-container h4{padding-left: 5%; color:white}
+table{width:80%; margin-left:10%;}
+th,td{height:50px; padding:15px; font-size: 1.4vw; text-align: left; color: white; border-bottom: 1px solid #DDDDDD;}
+td a{text-decoration: none; color: white;}
+.collection{
+    width:80%;
+    height:auto;
+    overflow: auto;
+    background-color:  #3B3934;
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+}
+.collection h4{color: white; padding-left: 5%;}
+.dropbtn {
+    background-color: #3B3934;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 60%;
+    margin-top: 4%;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}  
+.dropdown:hover .dropbtn {background-color: #3B3934;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}

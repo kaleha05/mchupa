@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../styles/pages.css" type="text/css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+        <script type="text/javascript" src="../scripts/validate.js"></script>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    </head>
+    <body>
+        <h3>Create Your Account</h3>
+        <div class="sign-up">
+            <div class="leftsignup">
+                <form action="insert.php" method="post" name="newuser" onsubmit="return checkForm(this);">
+                    <p>Organization Type</p>
+                    <select class="rounded" name="orgtype" required>
+                        <option disabled selected></option>
+                        <option name="School">School</option>
+                        <option name="Hotel">Hotel</option>
+                        <option name="Company">Company</option>
+                    </select>
+                    <p>Name</p>
+                        <input class="rounded" type="text" name="cname" required >
+                    <p>Country</p>
+                        <select class="rounded" name="country"  required>
+                            <option name="Kenya">Kenya</option>
+                        </select>
+                    <p>City</p>
+                        <select class="rounded" name="city" required>
+                            <option name="Nairobi">Nairobi</option>
+                            <option name="Kisumu">Kisumu</option>
+                            <option name="Mombasa">Mombasa</option>
+                        </select>
+                    <p>Email address</p>
+                        <input class="rounded" type="text" name="email"  required>
+                    <p>Telephone</p>
+                        <input class="rounded" type="number" name="telephone" required>
+                    <p>Password</p>
+                        <input class="rounded" type="password" name="pwd" minlength="8" required>
+                        <p class="note">*Password should contain at least one number, one lowercase and one uppercase letter</p>
+                    <p>Confirm password</p>
+                        <input class="rounded"type="password" name="pwd1" required title="Please enter the same password as above">
+                    <input class="rounded" type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="rightsignup"></div>
+        </div>
+    </body>
+</html>
