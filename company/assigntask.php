@@ -19,7 +19,8 @@ if (mysqli_query($conn, $sql))
 {
 	$update_query = "UPDATE collection_requests SET ASSIGNMENT='ASSIGNED' WHERE REQUESTID='$reqnumber'";
 	mysqli_query($conn, $update_query);
-    header('location: companydashboard.php');
+    echo '<script>alert("Task has been assigned successfully")</script>'; 
+    header( "refresh:0.5; url=companydashboard.php" );
 }
 else 
 {

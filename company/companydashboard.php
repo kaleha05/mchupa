@@ -23,6 +23,7 @@
                             <a href="collectionrequests.php">Assign tasks</a>
                             <a href="tasks.php">Employee tasks</a>
                             <a href="customers.php">Existing Customers</a>
+                            <a href="view-collections.php">View collections</a>
                             <a href="makepayment.php">Make a Payment</a>
                             <a href="payments.php">Payments to Customers</a>
                             <a href="../pages/log-out.php">Logout</a>

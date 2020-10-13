@@ -7,6 +7,7 @@
         <link href="../styles/new.css?v=<?php echo time();?>" type="text/css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body> 
         <div class="big-container">
@@ -33,37 +34,36 @@
                 </div>
             </div>
             <div class="profile-container">
-                <h4>Pending collections</h4>
                 <table>
                 <?php
                     include('../pages/connect.php');
-                    $results = mysqli_query($conn,"SELECT * FROM emp_tasks WHERE COMPANYID='$id'AND TASK_STATUS='NOT COMPLETED'");
+                    $results = mysqli_query($conn,"SELECT * FROM collection_view WHERE COMPANY_ID='$id'");
                     if(mysqli_num_rows($results) == 0){
                 ?>
-                <p>No records to display</p>
+                <p>No records to show</p>
                 <?php
                 }else{
                 ?>
+                <h4>Payments</h4>
                     <table>
                         <tr>
-                            <th>Request number</th>
-                            <th>Employee</th>
-                            <th></th>
-                            <th>Customer</th>
+                            <th>Customer Name</th>
+                            <th>Mass(kg)</th>
+                            <th>Date of collection</th>
                         </tr>
                         <?php
-                        while($rows= mysqli_fetch_array($results)) {
-                        ?>
+                            while($rows = mysqli_fetch_array($results)){
+                        ?> 
                         <tr>
-                            <td><?php echo $rows['REQUESTNO'];?></td>
-                            <td><?php echo $rows['FNAME'];?></td>
-                            <td><?php echo $rows['LNAME'];?></td>
-                            <td><?php echo $rows['CUSTNAME'];?></td>
+                            <td><?php echo $rows['CUSTNAME']?></td>
+                            <td><?php echo $rows['MASS_IN_KG']?></td>
+                            <td><?php echo $rows['COLLECTIONDATE']?></td>
                         </tr>
-                        <?php
-                        }}
-                ?>
+                        <?php } ?>
                     </table>
+                <?php
+                }
+                ?>
             </div>
             <div id="space"></div>
         </div>

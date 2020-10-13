@@ -22,7 +22,7 @@ else{
 $query = "INSERT INTO collection_requests(CUSTID, COMPID, REQUIRED_DATE, REQUIRED_TIME,STATUS) VALUES ('$custid', '$compid', '$req_date', '$req_time','NOT COLLECTED')";
 if(mysqli_query($conn, $query)){
     echo '<script>alert("Your request has been recorded")</script>'; 
-    header( "refresh:1; url=user-dashboard.php" );
+    header( "refresh:0.5; url=user-dashboard.php" );
 }else{
     echo "Record not inserted";
 }

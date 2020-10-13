@@ -7,12 +7,11 @@ if (isset($_POST['log-in'])) {
     $password = mysqli_real_escape_string($conn, $_POST['pwd']);
     
     $password = md5($password);
-    $query = "SELECT * FROM company_details WHERE COMPANY_EMAIL='$email' AND PASS ='$password'";
-    $results = mysqli_query($conn, $query);
-    $res = mysqli_fetch_array($results);
+    $companyQuery = mysqli_query($conn, "SELECT * FROM company_details WHERE COMPANY_EMAIL='$email' AND PASS ='$password'");
+    $results = mysqli_fetch_array($companyQuery);
 
-    if (mysqli_num_rows($results) == 1) {
-        $_SESSION['id'] = $res['COMPANYID'];
+    if (mysqli_num_rows($companyQuery) == 1) {
+        $_SESSION['id'] = $results['COMPANYID'];
         $_SESSION['loggedin'] = true;
         header('location: companydashboard.php');
     }else {

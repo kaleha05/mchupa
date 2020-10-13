@@ -57,7 +57,7 @@
                     </table>
                     <p style="padding-left:10%;">Enter the number of the company you chose</p>
                     <input type="number" name="num" class="rounded" required style="width:30%; margin-left:10%;"><br>
-                    <input type="submit" value="Submit" class="rounded">
+                    <input type="submit" value="Submit" class="rounded" required style="margin-left:20%;">
                 </form>
             </div>
             <div id="space"></div>

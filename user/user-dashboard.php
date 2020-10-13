@@ -30,13 +30,13 @@
                 <div class="stats-container">
                     <a href="user-stats.php"><img id="stats-icon" src="../images/stats2.png"></a>
                     <h3>My Stats</h3>
-                    <p>Click to view your recycle count, account balance and bonuses </p>
+                    <p>Click to view your recycle count, payments and deposits </p>
                     <a href="user-stats.php"><button class="rounded"><b>My Stats</b></button></a>
                 </div>
                 <div class="account-container">
                     <a href="user-profile.php"><img id="account-icon" src="../images/nu1.png"></a>
                     <h3>My Profile</h3>
-                    <p>Click to change your account password, profile picture or review your profile</p>
+                    <p>Click to change your account password or review your profile</p>
                     <a href="user-profile.php"><button class="rounded"><b>My Profile</b></button></a>
                 </div>
             </div>

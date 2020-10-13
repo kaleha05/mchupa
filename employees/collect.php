@@ -25,7 +25,7 @@ $req_id = $req['REQUESTID'];
 date_default_timezone_set('Africa/Nairobi');
 $time = date('H:i:s');
 $date = date("Y-m-d");
-$sql = "INSERT INTO collection_details (COMPANY_ID,CUSTOMER_ID,MASS,COLLECTIONDATE,COLLECTIONTIME) VALUES ('$comp_id','$cust_id','$mass','$date','$time')";
+$sql = "INSERT INTO collection_details (COMPANY_ID,CUSTOMER_ID,MASS_IN_KG,COLLECTIONDATE,COLLECTIONTIME) VALUES ('$comp_id','$cust_id','$mass','$date','$time')";
 if (mysqli_query($conn, $sql)) 
 {
 	$updatetask = "UPDATE employee_tasks SET TASK_STATUS='COMPLETED' where REQUESTNO='$req_id'";
