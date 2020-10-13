@@ -1,39 +1,69 @@
 <?php
     include('getcompanyprofile.php');
 ?>
-<!DOCTYPE html>
 <html>
     <head>
-        <link href="../styles/new.css" type="text/css" rel="stylesheet">
+        <title></title>
+        <link href="../styles/new.css?v=<?php echo time();?>" type="text/css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body>
-        <h3>Make a payment</h3>
-        <div class="sign-up">
-            <div class="leftsignup">
+    <body> 
+        <div class="big-container">
+            <div class="top">
+                <div class="top-left">
+                    <div class="left"><img id="icon" src="../images/comp1.png"></div>
+                    <div class="right"><h4><?php echo $name; ?></h4></div>
+                </div>
+                <div class="top-right">
+                    <div class="dropdown">
+                        <button class="dropbtn">Options</button>
+                        <div class="dropdown-content">
+                            <a href="companydashboard.php">Home</a>
+                            <a href="newemployee.html">New employee account</a>
+                            <a href="collectionrequests.php">Assign tasks</a>
+                            <a href="tasks.php">Employee tasks</a>
+                            <a href="customers.php">Existing Customers</a>
+                            <a href="makepayment.php">Make a Payment</a>
+                            <a href="payments.php">Payments to Customers</a>
+                            <a href="../pages/log-out.php">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-container">
+                <table>
+                <?php
+                    include('../pages/connect.php');
+                    $results = mysqli_query($conn,"SELECT * FROM amount_view WHERE COMPANY_ID='$id'");
+                    if(mysqli_num_rows($results) == 0){
+                ?>
+                <p>You have no pending payments to make</p>
+                <?php
+                }else{
+                ?>
+                <h4>Make a payment</h4>
                 <form action="pay.php" method="post">
-                    <p>Enter the amount</p>
-                    <input type="number" name="amt" class="rounded" required style="width:30%;"><br>
-                    <p>Choose a company</p>
-                    <select class="rounded" name="custid" required style="width:30%;">
-                        <option disabled selected value> -- select a company -- </option>
+                    <p>Choose a record</p>
+                    <select class="rounded" name="coll_id" required style="width:30%;">
+                        <option disabled selected value> -- select a record -- </option>
                         <?php
-                        include('../pages/connect.php');
-                            $query = mysqli_query($conn,"SELECT * FROM to_be_paid WHERE COMPANY_ID='$id'");
-                            $rows = array(); 
-                            $n=0;
-                            while($result = mysqli_fetch_array($query)){
+                            while($rows = mysqli_fetch_array($results)){
+                                $cId = $rows['COLLECTIONID'];
+                                $checkQuery = mysqli_query($conn, "SELECT * FROM payments WHERE COLLECT_ID='$cId'");
+                                if(mysqli_num_rows($checkQuery) == 0){
                         ?> 
-                            <option value="<?php echo $result['CUSTOMER_ID']?>"><?php echo $result['CUSTNAME']?></option>
-                        <?php } ?>
+                            <option value="<?php echo $rows['COLLECTIONID']?>"><?php echo $rows['CUSTNAME']." ".$rows['COLLECTIONDATE']." "."Ksh".$rows['AMT'];?></option>
+                        <?php }} ?>
                     </select><br>
                     <input class="rounded" type="submit" value="Submit" style="margin-left:20%;">
                 </form>
+                <?php
+                }
+                ?>
             </div>
-            <div class="rightsignup"></div>
+            <div id="space"></div>
         </div>
-        <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script type="text/javascript" src="checkForm.js"></script>
     </body>
 </html>

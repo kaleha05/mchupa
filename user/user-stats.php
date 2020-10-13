@@ -20,6 +20,7 @@
                         <button class="dropbtn">Options</button>
                         <div class="dropdown-content">
                             <a href="user-dashboard.php">Home</a>
+                            <a href="user-pay.php">View payments</a>
                             <a href="req-collection.php">Request Collection</a>
                             <a href="../pages/log-out.php">Logout</a>
                         </div>
@@ -62,43 +63,10 @@
                         $result = mysqli_fetch_array($total_query);
                         $total = $result['TOTAL_MASS']; 
                     ?>
-                <p>You have recycled <?php echo round($total,2);?> grams of plastic</p>
+                <p>You have recycled <?php echo round($total,2);?> kilograms of plastic</p>
                 <?php
                     }
                 ?>
-            <h4>Payments</h4>
-            <?php
-                $query= mysqli_query($conn, "SELECT * FROM payments WHERE CUST_ID=$id");
-                if(mysqli_num_rows($query)==0){
-                    ?><p>No records to display</p><?php
-                }else{
-                    $sum = 0;
-                ?>
-                    <table>
-                        <tr>
-                            <th>Amount Paid(ksh)</th>
-                            <th>Payment Date</th>
-                            <th>Payment Time</th>
-                        </tr>
-                        <?php
-                        while($rows = mysqli_fetch_array($query)) {
-                        ?>
-                        <tr>
-                            <td><?php echo $rows['AMOUNT'];?></td>
-                            <td><?php echo $rows['PAYMENTDATE'];?></td>
-                            <td><?php echo $rows['PAYTIME'];?></td>
-                        </tr>
-                        <?php
-                        $sum = $sum + $rows['AMOUNT'];
-                        }
-                        $balance = $amt - $sum
-                        ?>
-                    </table>
-                    <p>Total paid = Ksh<?php echo $sum;?></p><!--generate 2dp automztically-->
-                    <p>Balance = Ksh<?php echo $balance?>0</p>
-                <?php
-                }
-            ?>
             </div>
             <div id="space"></div>
         </div>
