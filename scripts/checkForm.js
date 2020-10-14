@@ -1,27 +1,33 @@
-function checkForm(form) { 
-    pwd = form.pwd.value; 
-    pwd1 = form.pwd1.value;
-    email = form.email.value; 
+function checkPassword(str)
+{
+  var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+  return re.test(str);
+}
 
-    var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-    var chars=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+function checkForm(form)
+{
+  if(form.fname.value == "" || form.lname.value == "") {
+    alert("Error: Name cannot be blank!");
+    form.cname.focus();
+    return false;
+  }
 
-   if(chars.test(email) = false)
-   {
-       alert("Please enter a valid email");
-   }
-   
-    if (pwd != pwd1) { 
-        alert ("Your passwords do not match"); 
-        return false; 
-    } 
-    else{ 
-        if(re.test(pwd) = false){
-            alert ("Password does not match the required format");
-            return false;
-        }
-        else{
-            return true;
-        }
-    } 
-} 
+  if(form.telephone.value < 700000000 || form.telephone.value >799999999) {
+    alert("Error: Invalid telephone");
+    form.telephone.focus();
+    return false;
+  }
+  
+  if(form.pwd.value != "" && form.pwd.value == form.pwd1.value) {
+    if(!checkPassword(form.pwd.value)) {
+      alert("The password you have entered is not strong enough!");
+      form.pwd.focus();
+      return false;
+    }
+  } else {
+    alert("Your passwords do not match");
+    form.pwd.focus();
+    return false;
+  }
+  return true;
+}
